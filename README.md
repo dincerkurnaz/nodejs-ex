@@ -1,10 +1,17 @@
 
-oc new-project samplepipeline --display-name="Pipeline Sample" --description='Pipeline Sample'
-oc new-app jenkins-ephemeral
-oc create -f https://raw.githubusercontent.com/openshift/origin/master/examples/jenkins/pipeline/samplepipeline.yaml
-oc new-app jenkins-pipeline-example
-oc start-build sample-pipeline
-oc rollback nodejs-mongodb-example --to-version=1
+ oc new-project samplepipeline --display-name="Pipeline Sample" --description='Pipeline Sample'
+ 
+ oc new-app jenkins-ephemeral
+ 
+ oc create -f https://raw.githubusercontent.com/dincerkurnaz/nodejs-ex/master/samplepipeline.yaml
+ 
+ oc new-app jenkins-pipeline-example
+ 
+ oc start-build sample-pipeline
+ 
+ oc rollback nodejs-mongodb-example --to-version=1
+ 
+
 
 <!-- toc -->
 
